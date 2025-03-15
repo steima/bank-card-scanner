@@ -10,7 +10,7 @@ import {
     setupIonicReact
 } from '@ionic/react';
 import {IonReactRouter} from '@ionic/react-router';
-import {ellipse, square, triangle} from 'ionicons/icons';
+import {cameraOutline, ellipse, listOutline, settingsOutline, square, triangle} from 'ionicons/icons';
 import CameraTab from './pages/CameraTab';
 import HistoryTab from './pages/HistoryTab';
 import SettingsTab from './pages/SettingsTab';
@@ -58,15 +58,15 @@ const App: React.FC = () => (
                     </IonRouterOutlet>
                     <IonTabBar slot="bottom">
                         <IonTabButton tab="camera" href="/camera">
-                            <IonIcon aria-hidden="true" icon={triangle}/>
+                            <IonIcon aria-hidden="true" icon={cameraOutline}/>
                             <IonLabel>Camera</IonLabel>
                         </IonTabButton>
                         <IonTabButton tab="history" href="/history">
-                            <IonIcon aria-hidden="true" icon={ellipse}/>
+                            <IonIcon aria-hidden="true" icon={listOutline}/>
                             <IonLabel>History</IonLabel>
                         </IonTabButton>
                         <IonTabButton tab="settings" href="/settings">
-                            <IonIcon aria-hidden="true" icon={square}/>
+                            <IonIcon aria-hidden="true" icon={settingsOutline}/>
                             <IonLabel>Settings</IonLabel>
                         </IonTabButton>
                     </IonTabBar>
