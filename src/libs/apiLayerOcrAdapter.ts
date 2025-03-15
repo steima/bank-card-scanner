@@ -20,6 +20,7 @@ class ApiLayerOcrAdapter {
             if(iban) {
                 return iban;
             }
+            throw new Error("No IBAN found in OCR result");
         }
         throw new Error("Error while getting ocr result");
     }
@@ -31,6 +32,11 @@ class ApiLayerOcrAdapter {
             if(iban) {
                 return iban[0];
             }
+        }
+        const joined = annotations.join("");
+        const iban = joined.match(ibanRegex);
+        if(iban) {
+            return iban[0];
         }
         return undefined;
     }
