@@ -1,3 +1,4 @@
+import {apiKey} from "./apiKeyHelper";
 
 export interface BankData {
     "bank_data": {
@@ -29,7 +30,7 @@ class ApiLayerBankDataAdapter {
 
     async getBankData(iban: string): Promise<BankData> {
         const myHeaders = new Headers();
-        myHeaders.append("apikey", "/* TODO put your api key here */");
+        myHeaders.append("apikey", apiKey("REACT_APP_API_LAYER_BANK_DATA_API_KEY"));
 
         const requestOptions = {
             method: 'GET',

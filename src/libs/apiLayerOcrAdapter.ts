@@ -1,8 +1,10 @@
+import {apiKey} from "./apiKeyHelper";
+
 class ApiLayerOcrAdapter {
 
     async getOcrResult(image: string): Promise<string> {
         const myHeaders = new Headers();
-        myHeaders.append("apikey", "/* TODO put your api key here */");
+        myHeaders.append("apikey", apiKey("REACT_APP_API_LAYER_OCR_API_KEY"));
         const localResult = await fetch(image);
         const raw = await localResult.blob();
         const requestOptions = {
