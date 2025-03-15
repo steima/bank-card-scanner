@@ -10,7 +10,7 @@ import {
     setupIonicReact
 } from '@ionic/react';
 import {IonReactRouter} from '@ionic/react-router';
-import {cameraOutline, ellipse, listOutline, settingsOutline, square, triangle} from 'ionicons/icons';
+import {cameraOutline, listOutline, settingsOutline} from 'ionicons/icons';
 import CameraTab from './pages/CameraTab';
 import HistoryTab from './pages/HistoryTab';
 import SettingsTab from './pages/SettingsTab';

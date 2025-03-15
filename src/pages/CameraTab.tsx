@@ -7,7 +7,7 @@ import {
     IonPage,
     IonRow,
     IonText,
-    IonTitle,
+    IonTitle, IonToast,
     IonToolbar, useIonLoading
 } from '@ionic/react';
 import {Camera, CameraResultType} from '@capacitor/camera';
@@ -21,6 +21,7 @@ const CameraTab: React.FC = () => {
     const [currentPicture, setCurrentPicture] = useState<string>();
     const [iban, setIban] = useState<string>();
     const [bankData, setBankData] = useState<BankData>();
+    const [error, setError] = useState<string>();
 
     const bankDataHistoryContext = useBankDataHistoryContext();
 
@@ -41,8 +42,8 @@ const CameraTab: React.FC = () => {
                 const tmpBankData = await apiLayerBankDataAdapter.getBankData(tmpIban);
                 setBankData(tmpBankData);
                 bankDataHistoryContext.addBankData(tmpBankData);
-            }catch (e) {
-                console.error(e);
+            }catch (e: any) {
+                setError(e.message);
             }finally {
                 await dismiss();
             }
@@ -71,7 +72,14 @@ const CameraTab: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol>
-                            {!currentPicture && <div className="info-box">Please scan a bank card to start</div>}
+                            {!currentPicture &&
+                                <div className="info-box">
+                                    <div className="info-box-title">
+                                        Please scan a bank card to start
+                                    </div>
+                                    <div className="info-box-placeholder-image"></div>
+                                </div>
+                            }
                             {currentPicture && <img src={currentPicture} alt=""/>}
                         </IonCol>
                     </IonRow>
@@ -130,6 +138,7 @@ const CameraTab: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
+                <IonToast isOpen={Boolean(error)} message={error} position="top" duration={10000}></IonToast>
             </IonContent>
         </IonPage>
     );
