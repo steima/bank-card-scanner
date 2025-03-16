@@ -30,7 +30,7 @@ class ApiLayerBankDataAdapter {
 
     async getBankData(iban: string): Promise<BankData> {
         const myHeaders = new Headers();
-        myHeaders.append("apikey", apiKey("REACT_APP_API_LAYER_BANK_DATA_API_KEY"));
+        myHeaders.append("apikey", apiKey("VITE_API_LAYER_BANK_DATA_API_KEY"));
 
         const requestOptions = {
             method: 'GET',

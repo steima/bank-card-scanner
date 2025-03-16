@@ -1,8 +1,8 @@
 {
-  "name": "bank-card-scanner",
+  "name": "bank-card-scanner-v8",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react",
-  "id": "0f4c684a"
+  "type": "react-vite",
+  "id": "c87113c6"
 }

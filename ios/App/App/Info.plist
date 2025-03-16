@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>bank-card-scanner</string>
+        <string>bank-card-scanner-v8</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,13 +45,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-    <key>NSCameraUsageDescription</key>
-    <string>Take pictures of bank cards</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Take pictures of bank cards</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Take pictures of bank cards</string>
 </dict>
 </plist>
