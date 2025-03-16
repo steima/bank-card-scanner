@@ -45,5 +45,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+    <string>Take pictures of bank cards</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Take pictures of bank cards</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Take pictures of bank cards</string>
 </dict>
 </plist>
